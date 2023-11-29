@@ -69,14 +69,17 @@ inputs:
   helpText:
 outputs:
 - key: "AC_APPDOME_SECURED_IPA_PATH"
+  defaultValue: "AC_APPDOME_SECURED_IPA_PATH"
   title: "Secured .ipa File Path"
   description: Local path of the secured .ipa file. Available when 'Signing Method' set to 'On-Appdome' or 'Private-Signing'.
   helpText:
 - key: "AC_APPDOME_PRIVATE_SIGN_SCRIPT_PATH"
+  defaultValue: "AC_APPDOME_PRIVATE_SIGN_SCRIPT_PATH"
   title: .sh Sign Script File Path
   description: "Local path of the .sh sign script file. Available when 'Signing Method' set to 'Auto-Dev-Signing"
   helpText:
 - key: "AC_APPDOME_CERTIFICATE_PATH"
+  defaultValue: "AC_APPDOME_CERTIFICATE_PATH"
   title: Certified Secure Certificate .pdf file path
   description: "Local path of the Certified Secure Certificate .pdf file"
   helpText: 
