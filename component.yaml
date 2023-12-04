@@ -68,7 +68,7 @@ outputs:
 - key: "AC_APPDOME_PRIVATE_SIGN_SCRIPT_PATH"
   defaultValue: "AC_APPDOME_PRIVATE_SIGN_SCRIPT_PATH"
   title: .sh Sign Script File Path
-  description: "Local path of the .sh sign script file. Available when 'Signing Method' set to 'Auto-Dev-Signing"
+  description: Local path of the .sh sign script file. Available when 'Signing Method' set to 'Auto-Dev-Signing'.
   helpText:
 - key: "AC_APPDOME_CERTIFICATE_PATH"
   defaultValue: "AC_APPDOME_CERTIFICATE_PATH"
