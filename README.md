@@ -1,4 +1,4 @@
-# Appcircle _Appdome Build to Secure for iOS_ component
+# Appcircle _Appdome Build-2Secure for iOS_ component
 
 Integration that allows activating security and app protection features, building and signing mobile apps using Appdome's API.
 
@@ -26,10 +26,12 @@ Integration that allows activating security and app protection features, buildin
 ## Adding File Inputs
 
 You can utilize Appcircle's `Environment Variables` page to generate the necessary file inputs for Appdome. For more detailed information, please refer to the document below:
-- https://docs.appcircle.io/environment-variables/managing-variables#adding-files-as-environment-variables
 
-If you want to use reserved environment variables such as `AC_PROVISIONING_PROFILES` and `AC_CERTIFICATES` for the files input, you must also adapt the file extensions. For instance, to change the `AC_PROVISIONING_PROFILES` extension to `mobileprovision` you can execute the following code using the `Custom Script` before the `Appdome Build to Secure for iOS` step:
-```
+- [Adding Files as Environment Variables](https://docs.appcircle.io/environment-variables/managing-variables#adding-files-as-environment-variables)
+
+If you want to use reserved environment variables such as `AC_PROVISIONING_PROFILES` and `AC_CERTIFICATES` for the files input, you must also adapt the file extensions. For instance, to change the `AC_PROVISIONING_PROFILES` extension to `mobileprovision` you can execute the following code using the `Custom Script` before the `Appdome Build-2Secure for iOS` step:
+
+```bash
 provision_profiles=$(echo "$AC_PROVISIONING_PROFILES" | tr "|" ,)
 
 if [ -f "$provision_profiles" ];  then
@@ -39,7 +41,7 @@ else
   exit 1
 fi
 
-mv "${provision_profiles}" "${provision_profiles}.mobileprovision" 
+mv "${provision_profiles}" "${provision_profiles}.mobileprovision"
 
 AC_PROVISIONING_PROFILES="${AC_PROVISIONING_PROFILES}.mobileprovision"
 echo $AC_PROVISIONING_PROFILES
@@ -48,4 +50,5 @@ echo "AC_PROVISIONING_PROFILES=${AC_PROVISIONING_PROFILES}" >> $AC_ENV_FILE_PATH
 ```
 
 For more details about Custom Script, see the document below:
-- https://docs.appcircle.io/integrations/working-with-custom-scripts/
+
+- [Working With Custom Scripts](https://docs.appcircle.io/integrations/working-with-custom-scripts/)
