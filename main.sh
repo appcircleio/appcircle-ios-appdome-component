@@ -19,6 +19,9 @@ download_file() {
 	curl -L "$file_location" --output "$downloaded_file" && echo "$downloaded_file"
 }
 
+# Sourcing (e.g. from tests) loads the functions above without running the step.
+[[ "${BASH_SOURCE[0]}" != "${0}" ]] && return 0
+
 if [[ "$APPDOME_APP_PATH" == *"http"* ]];
 then
 	app_file="../$(download_file "$APPDOME_APP_PATH")"

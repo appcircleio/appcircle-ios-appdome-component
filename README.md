@@ -52,3 +52,11 @@ echo "AC_PROVISIONING_PROFILES=${AC_PROVISIONING_PROFILES}" >> $AC_ENV_FILE_PATH
 For more details about Custom Script, see the document below:
 
 - [Working With Custom Scripts](https://docs.appcircle.io/integrations/working-with-custom-scripts/)
+
+## Running tests
+
+Requires [bats-core](https://github.com/bats-core/bats-core) (`brew install bats-core` or `npm install -g bats`). The tests run `main.sh` inside a temporary directory and stub `git`, `curl` and Appdome's `appdome_api.sh`, so no network call is made and the real Appdome API is never reached.
+
+```bash
+bats test/
+```
